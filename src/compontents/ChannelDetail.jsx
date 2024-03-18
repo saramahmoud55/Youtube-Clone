@@ -1,7 +1,7 @@
 import {useState,useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import { Box } from '@mui/material';
-import {Videos} from './Videos'
+import {Videos} from './'
 import { FetcFromAPI } from '../Utils/FetchFromAPI'
 import ChannelCard from './ChannelCard';
 const ChannelDetail = () => {
@@ -20,7 +20,12 @@ const ChannelDetail = () => {
     <Box minHeight="95vh">
       <Box>
         <div style={{background: "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,85,1) 0%, rgba(0,212,255,1) 100%)",zIndex:10,height:'300px'}}/>
-      <ChannelCard channelDetail={channelDetail} marginTop='-93px'/>
+      <ChannelCard channelDetail={channelDetail} marginTop='-110px'/>
+      </Box>
+      <Box display="flex" p="2">
+      <Box sx={{mr:{sm:'100px'}}}>
+          <Videos videos={videos}/>
+        </Box>
       </Box>
     </Box>
   )
