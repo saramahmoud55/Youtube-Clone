@@ -2,9 +2,9 @@ import { useState,useEffect } from "react"
 import { Link ,useParams} from "react-router-dom"
 import ReactPlayer from "react-player"
 import {Box,Stack,Typography} from '@mui/material'
-import { CheckCircle } from "@mui/icons-material"
+import { CheckCircle } from "@mui/icons-material";
 import {Videos} from './'
-import { FetcFromAPI } from "../Utils/FetchFromAPI"
+import { FetcFromAPI } from "../Utils/FetchFromAPI";
 
 const VideoDetail = () => {
   
