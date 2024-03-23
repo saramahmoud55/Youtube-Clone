@@ -15,10 +15,12 @@ const VideoDetail = () => {
     FetcFromAPI(`videos?part=snippet,statistics&id=${id}`)
     .then((data)=>setVideoDetail(data.items[0]))
 
-    FetcFromAPI(`videos?part=snippet&relatedToVideoId=${id}&type=video`)
+    FetcFromAPI(`search?part=snippet&relatedToVideoId=${id}&type=video`)
     .then((data)=>setVideos(data.items))
 
   },[id])
+  console.log(videoDetail)
+  console.log(videos)
 
   if(!videoDetail?.snippet)return 'Loading...'
     const {snippet:{title,channelId,channelTitle},statistics:{viewCount,linkCount}}=videoDetail
@@ -54,7 +56,9 @@ const VideoDetail = () => {
         </Box>
       </Stack>
       <Box px={2} py={{md:1,xs:5}} justifyContent="center" alignItems="center">
+        {/* <Videos videos={videos}/> */}
         <Videos videos={videos}/>
+
       </Box>
     </Box>
   )
